@@ -49,4 +49,5 @@ body {
   color: #0F1014;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
