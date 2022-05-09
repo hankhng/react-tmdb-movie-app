@@ -14,7 +14,7 @@ function App() {
     const { data: { results } } = await axios.get(`${MOVIE_API}/${searchType}/movie`, {
       params: {
         api_key: "7d4270b1c65d636e4008c412ac43bdaf",
-        // api_key: process.env.local.TMDB_API_KEY, 
+        // api_key: process.env.TMDB_API_KEY, 
         // can't get process.env to work
         query: searchKey
       }
