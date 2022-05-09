@@ -7,11 +7,14 @@ function App() {
 
   const MOVIE_API = "https://api.themoviedb.org/3"
   const [movies, setMovies] = useState([]);
+  const [searchKey, setSearchkey] = useState([], "");
 
-  const fetchMovies = async () => {
-    const { data: {results} } = await axios.get(`${MOVIE_API}/discover/movie`, {
+  const fetchMovies = async (searchKey) => {
+    const searchType = searchKey ? "search" : "discover"
+    const { data: { results } } = await axios.get(`${MOVIE_API}/${searchType}/movie`, {
       params: {
-        api_key: "7d4270b1c65d636e4008c412ac43bdaf" // can't get process.env.TMDB_API_KEY to work
+        api_key: "7d4270b1c65d636e4008c412ac43bdaf", // can't get process.env.TMDB_API_KEY to work
+        query: searchKey
       }
     })
 
@@ -25,18 +28,34 @@ function App() {
 
   const renderMovies = () => (
     movies.map(movie => (
-        <MovieCard
-            key={movie.id}
-            movie={movie}
-        />
+      <MovieCard
+        key={movie.id}
+        movie={movie}
+      />
     ))
-)
+  )
+
+  const searchMovies = (e) => {
+    e.preventDefault()
+    fetchMovies(searchKey)
+  }
 
   return (
     <div className="App">
-      <h1>React Movie App</h1>
-      <div className="container">
-      {renderMovies()}
+      <header className={"header"}>
+        <div className={"header-content max-center"}>
+          <h1>Movie App</h1>
+          <form onSubmit={searchMovies}>
+            <input type="text" onChange={(e) => setSearchkey(e.target.value)} />
+            <button type={"submit"}>Search</button>
+          </form>
+        </div>
+      </header>
+      <div className={"header-content max-center"}>
+      <h2>Discover the latest movies</h2>
+      </div>
+      <div className="container max-center">
+        {renderMovies()}
       </div>
     </div>
   );
