@@ -2,20 +2,20 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
 import MovieCard from './components/MovieCard';
+import Favourite from './components/Favourite';
 
 function App() {
 
   const MOVIE_API = "https://api.themoviedb.org/3"
   const [movies, setMovies] = useState([]);
   const [searchKey, setSearchkey] = useState([], "");
+  const [favourite, setFavourite] = useState(false);
 
   const fetchMovies = async (searchKey) => {
     const searchType = searchKey ? "search" : "discover"
     const { data: { results } } = await axios.get(`${MOVIE_API}/${searchType}/movie`, {
       params: {
-        api_key: "7d4270b1c65d636e4008c412ac43bdaf",
-        // api_key: process.env.TMDB_API_KEY, 
-        // can't get process.env to work
+        api_key: process.env.REACT_APP_TMDB_API_KEY,
         query: searchKey
       }
     })
@@ -44,6 +44,9 @@ function App() {
 
   return (
     <div className="App">
+      <button onClick={() => setFavourite(true)}>Favourite</button>
+      <button onClick={() => setFavourite(false)}>Unfavourite</button>
+      {favourite && <Favourite />}
       <header className={"header"}>
         <div className={"header-content max-center"}>
           <h1>Movie App</h1>
@@ -54,12 +57,22 @@ function App() {
           </form>
         </div>
       </header>
+
       <div className={"header-content max-center"}>
-      <h2>Discover the latest movies</h2>
+        <h2>Favourites</h2>
+      </div>
+      <div className="container max-center">
+        
+      </div>
+
+      <div className={"header-content max-center"}>
+        <h2>Discover the latest movies</h2>
       </div>
       <div className="container max-center">
         {renderMovies()}
       </div>
+
+
     </div>
   );
 }
