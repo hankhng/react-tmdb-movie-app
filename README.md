@@ -14,5 +14,6 @@ If you want to install this project locally:
 ## API Keys
 
 1. Get your API keys from [The Movie Database (TMDB)](https://developers.themoviedb.org/3/getting-started/introduction).
-2. Add your API keys to the `.env` file.
-3. Name your API keys: `TMDB_API_KEY`
+2. Create `.env` file
+3. Add and name your API keys: `REACT_APP_TMDB_API_KEY`
+4. Set your TMDB API keys
