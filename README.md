@@ -1,6 +1,9 @@
 # React Movie TMDB App
-Discover the hottest movies and search for your favourite movies. React Movie TMDB APp is a movie database and search engine made with ReactJS and powered by [The Movie Database (TMDB)](https://developers.themoviedb.org/3). 
+Discover the hottest movies and search for your favourite movies. React Movie TMDB App is a movie database and search engine made with ReactJS and powered by [The Movie Database (TMDB)](https://developers.themoviedb.org/3). 
 
+## Note
+
+There's an open PR where I'm working on implementing functionality for the user to favourite movies and add them to a section. Also dynamic searching using UseEffect, so the search is dynamic as the user types. 
 
 ## Installation
 
@@ -16,4 +19,5 @@ If you want to install this project locally:
 1. Get your API keys from [The Movie Database (TMDB)](https://developers.themoviedb.org/3/getting-started/introduction).
 2. Create `.env` file
 3. Add and name your API keys: `REACT_APP_TMDB_API_KEY`
-4. Set your TMDB API keys
+4. Set your API keys from TMDB
+
