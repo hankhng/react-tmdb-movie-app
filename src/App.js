@@ -42,7 +42,7 @@ function App() {
       <MovieCard
         key={movie.id}
         movie={movie}
-        onClick={() => setFavouriteMovie((state) => state.filter(m => m.id !== movie.id)) }
+        onClick={() => setFavouriteMovie((state) => state.filter(m => m.id !== movie.id))}
       />
     ))
   )
@@ -59,7 +59,6 @@ function App() {
       <header className={"header"}>
         <div className={"header-content max-center"}>
           <h1 onClick={() => setSearchkey("")}>Movie App</h1>
-          {/* Add link tag to go home */}
           <form>
             <input type="text" onChange={(e) => setSearchkey(e.target.value)} value={searchKey} />
             <button type={"submit"}>Search</button>
@@ -80,8 +79,6 @@ function App() {
       <div className="container max-center">
         {renderMovies()}
       </div>
-
-
     </div>
   );
 }
