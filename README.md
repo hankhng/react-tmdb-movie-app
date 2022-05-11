@@ -21,3 +21,4 @@ If you want to install this project locally:
 3. Add and name your API keys: `REACT_APP_TMDB_API_KEY`
 4. Set your API keys from TMDB
 
+![CleanShot 2022-05-11 at 10 43 43](https://user-images.githubusercontent.com/30577676/167820435-80c2ab1d-a94c-4aed-847a-54d13e13cbb2.png)
