@@ -3,7 +3,7 @@ Discover the hottest movies and search for your favourite movies. React Movie TM
 
 ## Note
 
-There's an open PR where I'm working on implementing functionality for the user to favourite movies and add them to a section. Also dynamic searching using UseEffect, so the search is dynamic as the user types. 
+There's an open draft PR where I'm working on implementing functionality for the user to favourite movies and add them to a section. Also dynamic searching using UseEffect, so the search is dynamic as the user types. 
 
 ## Installation
 
