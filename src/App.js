@@ -44,35 +44,21 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={() => setFavourite(true)}>Favourite</button>
-      <button onClick={() => setFavourite(false)}>Unfavourite</button>
-      {favourite && <Favourite />}
       <header className={"header"}>
         <div className={"header-content max-center"}>
           <h1>Movie App</h1>
-          {/* Add link tag to go home */}
           <form onSubmit={searchMovies}>
             <input type="text" onChange={(e) => setSearchkey(e.target.value)} />
             <button type={"submit"}>Search</button>
           </form>
         </div>
       </header>
-
-      <div className={"header-content max-center"}>
-        <h2>Favourites</h2>
-      </div>
-      <div className="container max-center">
-        
-      </div>
-
       <div className={"header-content max-center"}>
         <h2>Discover the latest movies</h2>
       </div>
       <div className="container max-center">
         {renderMovies()}
       </div>
-
-
     </div>
   );
 }
